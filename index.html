@@ -587,7 +587,26 @@
   .sparkle {
     position: absolute; width: 8px; height: 8px;
     background: var(--peach); border-radius: 50%;
-    animation: sparkle 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(255,255,255,0.6), inset 0 0 4px rgba(255,255,255,0.6);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.35));
+    animation: sparkle 2s ease-in-out infinite, glowPulse 1.5s ease-in-out infinite alternate;
+  }
+  .sparkle::before,
+  .sparkle::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 120%; height: 120%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  .sparkle::after {
+    width: 200%; height: 200%;
+    opacity: 0.2;
+    filter: blur(5px);
   }
   .sparkle:nth-child(1) { top:10%; left:10%; animation-delay: 0s; }
   .sparkle:nth-child(2) { top:5%;  right:15%; animation-delay: .4s; background: #FFFFFF; }
@@ -599,6 +618,10 @@
   @keyframes sparkle {
     0%,100% { transform: scale(0) rotate(0deg); opacity: 0; }
     50%      { transform: scale(1.4) rotate(180deg); opacity: 1; }
+  }
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 6px rgba(255,255,255,0.45), inset 0 0 3px rgba(255,255,255,0.35); }
+    100% { box-shadow: 0 0 14px rgba(255,255,255,0.8), inset 0 0 6px rgba(255,255,255,0.55); }
   }
 
   /* ── INTERACTIVE TOUCH SLIDER ENGINE + AUTO-SCROLL ON INACTIVITY ── */
@@ -941,7 +964,7 @@
 <div id="lock-screen">
   <div class="polaroid-container">
     <div class="polaroid-ribbon">🎀</div>
-    <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/WhatsApp%20Image%202026-06-28%20at%201.31.39%20PM.jpeg" alt="Gowthami Birthday Girl" class="polaroid-img" id="lock-img">
+    <img src="WhatsApp%20Image%202026-06-28%20at%201.31.39%20PM.jpeg" alt="Gowthami Birthday Girl" class="polaroid-img" id="lock-img">
     <div class="polaroid-caption">Happy Birthday! Gowthami!</div>
   </div>
 
@@ -1055,7 +1078,7 @@
     <div class="school-surprise-gallery" id="surprise-gallery">
       
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/Gemini_Generated_Image_oxy0dnoxy0dnoxy0%20(1).png" alt="School Day Memory 1">
+        <img src="Gemini_Generated_Image_oxy0dnoxy0dnoxy0%20(1).png" alt="School Day Memory 1">
         <div class="surprise-photo-caption">
           "Classroom bench la namma pesuna aayiram kathaigal...<br>
           Antha naatkal thandha santhosham eppovume thani thaan Gowthami!"
@@ -1063,7 +1086,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/Gemini_Generated_Image_oxy0dnoxy0dnoxy0.png" alt="School Day Memory 2">
+        <img src="Gemini_Generated_Image_oxy0dnoxy0dnoxy0.png" alt="School Day Memory 2">
         <div class="surprise-photo-caption">
           "Teacher nadathura lesson ku appo namma adicha lollu irukke...<br>
           Un kooda sethu panna alapparaigal ethuvume marakathu!"
@@ -1071,7 +1094,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/Gemini_Generated_Image_y51kaxy51kaxy51k.png" alt="School Day Memory 3">
+        <img src="Gemini_Generated_Image_y51kaxy51kaxy51k.png" alt="School Day Memory 3">
         <div class="surprise-photo-caption">
           "Last bench la namba sondha idham maari aachu...<br>
           Nammba panna alapparai lam,Pesama irunthalum Avlo alappara pannuvom!"
@@ -1079,7 +1102,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/lunch.jpg.png" alt="School Day Memory 4">
+        <img src="lunch.jpg.png" alt="School Day Memory 4">
         <div class="surprise-photo-caption">
           "Lunch break eppo varum nu wait panni thurandha lunchbox...<br>
           Antha niyabagam lam romba nalla irunthuchu!."
@@ -1087,7 +1110,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/download%20(19).jpg" alt="School Day Memory 5">
+        <img src="download%20(19).jpg" alt="School Day Memory 5">
         <div class="surprise-photo-caption">
           "Life la ups and downs varum pothu ellam na unakku than call pannuvan..<br>
           En theriyuma ,Antha time unoda words enakku romba support irukkum.!"
@@ -1095,7 +1118,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/download%20(21).jpg" alt="School Day Memory 6">
+        <img src="download%20(21).jpg" alt="School Day Memory 6">
         <div class="surprise-photo-caption">
           "Aana oru vishiyam gowthami unkuda jollya irukkratha vida <br>
           unna irritate pandrathu enakku romba pudikkum ,Athu Romba jolly ah irukkum."
@@ -1103,7 +1126,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/download%20(18).jpg" alt="School Day Memory 7">
+        <img src="download%20(18).jpg" alt="School Day Memory 7">
         <div class="surprise-photo-caption">
           "Evlo per life la vanthu ponaalun yaaaralaiyum oru place ah replace paanna mudiyathu<br>
           Athu neethan, no one can't replace you,You'r My one Real One!."
@@ -1111,7 +1134,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="C:\Users\iswarya\OneDrive\Desktop\gowthami\Best Friendsssss ✨🌼.jpg" alt="School Day Memory 8">
+        <img src="Best Friendsssss ✨🌼.jpg" alt="School Day Memory 8">
         <div class="surprise-photo-caption">
           "Namma jolly ah iruntha days ah vida sanda pottu pesama iruntha days than aathigam <br>
           Best friends ngra vaarthaike artham un kooda frd aana aprm than therinjuthu!."
@@ -1119,7 +1142,7 @@
       </div>
 
       <div class="surprise-photo-card">
-        <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/WhatsApp%20Image%202026-06-28%20at%201.31.40%20PM%20(1).jpeg" alt="School Day Memory 9">
+        <img src="WhatsApp%20Image%202026-06-28%20at%201.31.40%20PM%20(1).jpeg" alt="School Day Memory 9">
         <div class="surprise-photo-caption">
           "Eppovume un kooda irupen nu nethu sonnadhu inaiku unmai...<br>
           Intha payanam mudiyadhu, endrum anbudan ippidiye iruppom! 💖"
@@ -1164,13 +1187,13 @@
 
         <div class="letter-side-gallery">
           <div class="side-polaroid">
-            <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/WhatsApp%20Image%202026-06-24%20at%206.48.44%20PM.jpeg" alt="Gowthami Memory Photo 1">
+            <img src="WhatsApp%20Image%202026-06-24%20at%206.48.44%20PM.jpeg" alt="Gowthami Memory Photo 1">
           </div>
           <div class="side-polaroid">
-            <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/WhatsApp%20Image%202026-06-24%20at%206.48.45%20PM.jpeg" alt="Gowthami Memory Photo 2">
+            <img src="WhatsApp%20Image%202026-06-24%20at%206.48.45%20PM.jpeg" alt="Gowthami Memory Photo 2">
           </div>
           <div class="side-polaroid">
-            <img src="https://github.com/Iswarya939/Birthday-Wish-Webpage/blob/main/WhatsApp%20Image%202026-06-24%20at%207.53.27%20PM.jpeg" alt="Gowthami Memory Photo 3">
+            <img src="WhatsApp%20Image%202026-06-24%20at%207.53.27%20PM.jpeg" alt="Gowthami Memory Photo 3">
           </div>
         </div>
       </div>
